@@ -1,0 +1,83 @@
+@import '/styles/variables';
+.footer {
+  position: relative;
+  background: url('../../public/images/footer-background.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__inner {
+    padding: 1rem 0;
+    @media only screen and (min-width: $breakpoint-tablet) {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    color: #fff;
+    font-weight: $regular;
+    text-transform: uppercase;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__link {
+    display: block;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: $light;
+    margin: 2rem;
+    transition: 0.3s opacity;
+
+    img {
+      height: auto;
+      width: 3rem;
+      @media only screen and (min-width: $breakpoint-tablet) {
+        width: 4rem;
+      }
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__img {
+    height: auto;
+    width: 4rem;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  &__img {
+    display: block;
+    width: 10rem;
+    height: 7rem;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      width: 12rem;
+    }
+  }
+}
+
+.copyright {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}

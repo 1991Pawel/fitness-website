@@ -1,0 +1,18 @@
+@import 'variables.scss';
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__btn {
+    @include btn;
+  }
+  &__error {
+    color: $primary-color;
+  }
+
+  &__message {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

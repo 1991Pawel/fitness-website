@@ -1,0 +1,53 @@
+//Variables
+//colors
+$primary-color: #c54343;
+$light-color: #fff;
+$grey-color: rgb(77, 76, 76);
+
+//text colors
+$text-dark: #1a1a1a;
+$text-light: #fff;
+
+//fonts
+$sans-serif: 'Roboto Condensed', sans-serif;
+$bold: 700;
+$regular: 400;
+$light: 300;
+
+@mixin btn {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $text-light;
+  background: $primary-color;
+  padding: 1.25rem 4.5rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+@mixin wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+@mixin section-title {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+// mixins brakepoints
+$breakpoint-phone: 600px;
+$breakpoint-tablet: 800px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-xl: 1800px;

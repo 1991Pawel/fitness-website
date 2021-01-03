@@ -1,0 +1,84 @@
+@import 'variables.scss';
+.offer {
+  padding: 6rem 0;
+  @media only screen and (min-width: $breakpoint-tablet) {
+    padding: 8rem 0;
+  }
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
+.title {
+  @include section-title;
+}
+
+.options {
+  background-color: #b53434;
+  border-radius: 4px;
+  overflow: hidden;
+  @media only screen and (min-width: $breakpoint-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.header {
+  background: #2c2525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 8rem;
+
+  &__title {
+    color: $text-light;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}
+
+.option {
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 80px minmax(min-content, 300px);
+  grid-template-rows: min-content 1fr;
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    padding: 2rem;
+  }
+  @media only screen and (min-width: $breakpoint-desktop) {
+    padding: 3rem;
+  }
+  @media only screen and (min-width: $breakpoint-desktop-xl) {
+    padding: 4rem;
+  }
+
+  &__title,
+  &__desc {
+    color: $text-light;
+    margin-left: 1.25rem;
+  }
+  &__title {
+    font-weight: $regular;
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    font-weight: $light;
+  }
+
+  &__icon {
+    margin: auto;
+    display: block;
+    height: 60px;
+    width: 60px;
+    background-color: #fbfbfd;
+    padding: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 4px;
+    grid-row: 1 / -1;
+  }
+}

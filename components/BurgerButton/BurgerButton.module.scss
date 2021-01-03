@@ -1,0 +1,75 @@
+@import '/styles/variables';
+
+@mixin hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: $text-dark;
+  position: absolute;
+}
+@mixin hamburger {
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin-left: auto;
+  z-index: 10;
+  @media only screen and (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.hamburger {
+  @include hamburger;
+}
+
+.hamburger__active {
+  @include hamburger;
+  position: fixed;
+  right: 1rem;
+
+  .hamburger__inner {
+    background-color: transparent;
+  }
+
+  .hamburger__inner:before {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .hamburger__inner:after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+
+.hamburger__box {
+  width: 35px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger__inner {
+  @include hamburger-line;
+
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.1s 0.2s ease-in-out;
+}
+
+.hamburger__inner::before,
+.hamburger__inner::after {
+  @include hamburger-line;
+
+  content: '';
+  left: 0;
+  transition: transform 0.2s 0.2s ease-in-out;
+}
+
+.hamburger__inner::before {
+  top: -10px;
+}
+
+.hamburger__inner::after {
+  top: 10px;
+}

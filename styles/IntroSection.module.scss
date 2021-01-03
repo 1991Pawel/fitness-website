@@ -1,0 +1,89 @@
+@import 'variables.scss';
+
+.intro {
+  display: flex;
+
+  position: relative;
+  min-height: 70vh;
+  background: url('../public/images/intro-bg.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 1rem;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: 2rem;
+    color: $primary-color;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: $regular;
+
+    @media only screen and (min-width: $breakpoint-phone) {
+      font-size: 2.5rem;
+    }
+    @media only screen and (min-width: $breakpoint-tablet) {
+      font-size: 3rem;
+    }
+
+    &__special {
+      display: block;
+      color: $text-light;
+    }
+  }
+
+  .desc {
+    margin-top: 5rem;
+
+    color: #fff;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: $bold;
+
+    @media only screen and (min-width: $breakpoint-phone) {
+      font-size: 4.5rem;
+    }
+    @media only screen and (min-width: $breakpoint-tablet) {
+      font-size: 5rem;
+    }
+  }
+
+  .btn {
+    margin: 4rem 0;
+    @include btn;
+  }
+
+  .footer {
+    width: 100%;
+
+    display: flex;
+
+    &__text {
+      display: block;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.295);
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: $bold;
+      width: 33.33%;
+
+      @media only screen and (min-width: $breakpoint-phone) {
+        font-size: 3rem;
+      }
+      @media only screen and (min-width: $breakpoint-tablet) {
+        font-size: 4rem;
+      }
+    }
+  }
+}
