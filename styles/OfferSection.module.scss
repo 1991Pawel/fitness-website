@@ -1,9 +1,14 @@
 @import 'variables.scss';
 .offer {
-  padding: 6rem 0;
+  padding: 2rem 0;
+
   @media only screen and (min-width: $breakpoint-tablet) {
-    padding: 8rem 0;
+    padding: 4rem 0;
   }
+  @media only screen and (min-width: $breakpoint-desktop) {
+    padding: 6rem 0;
+  }
+
   &__inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -20,7 +25,9 @@
   overflow: hidden;
   @media only screen and (min-width: $breakpoint-tablet) {
     display: grid;
+    grid-gap: 1rem;
     grid-template-columns: 1fr 1fr;
+    padding: 1rem;
   }
 }
 
@@ -39,19 +46,17 @@
 }
 
 .option {
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 80px minmax(min-content, 300px);
   grid-template-rows: min-content 1fr;
+  background: $primary-color;
 
   @media only screen and (min-width: $breakpoint-tablet) {
-    padding: 2rem;
+    padding: 1.5rem;
   }
   @media only screen and (min-width: $breakpoint-desktop) {
-    padding: 3rem;
-  }
-  @media only screen and (min-width: $breakpoint-desktop-xl) {
-    padding: 4rem;
+    padding: 2rem;
   }
 
   &__title,
