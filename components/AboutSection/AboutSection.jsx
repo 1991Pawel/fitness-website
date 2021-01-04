@@ -74,8 +74,8 @@ const AboutSection = () => {
           </div>
         </motion.div>
         <motion.div
-          animate={shouldShow ? { opacity: 1, x: '0%' } : null}
-          initial={{ opacity: 1, x: '30%' }}
+          animate={shouldShow ? { opacity: 1, y: '0%', scale: 1 } : null}
+          initial={{ opacity: 0, y: '-10%', scale: 0.9 }}
           transition={{ duration: 1, delay: 0.5 }}
           className={styles.image}
         >

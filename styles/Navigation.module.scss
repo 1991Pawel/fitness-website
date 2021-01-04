@@ -29,7 +29,9 @@
 }
 
 .item {
-  margin-left: 3rem;
+  @media only screen and (min-width: $breakpoint-tablet) {
+    margin-left: 3rem;
+  }
 }
 
 .link {
