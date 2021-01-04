@@ -22,12 +22,12 @@
 .options {
   background-color: #b53434;
   border-radius: 4px;
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
   overflow: hidden;
   @media only screen and (min-width: $breakpoint-tablet) {
-    display: grid;
-    grid-gap: 1rem;
     grid-template-columns: 1fr 1fr;
-    padding: 1rem;
   }
 }
 
