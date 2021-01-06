@@ -38,7 +38,7 @@ const IntroSection = () => {
   };
 
   return (
-    <div className={styles.section__wrapper}>
+    <div id="intro" className={styles.section__wrapper}>
       <motion.div
         variants={container}
         initial="hidden"
@@ -49,7 +49,6 @@ const IntroSection = () => {
         initial="hidden"
         animate="show"
         variants={item}
-        id="intro"
         className={styles.intro}
       >
         <motion.div

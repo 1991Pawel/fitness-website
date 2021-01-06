@@ -3,6 +3,7 @@ import styles from 'styles/Form.module.scss';
 import FormInput from 'components/FormInput/FormInput';
 import { useMutation } from 'react-query';
 import encode from 'helpers/encode';
+import useForm from 'hooks/useForm';
 
 const initialState = {
   name: '',
@@ -10,7 +11,7 @@ const initialState = {
   message: '',
 };
 const Form = () => {
-  const [values, setValues] = useState(initialState);
+  const { values, setValues, handleChange } = useForm(initialState);
 
   const sendMessage = () => {
     return fetch('/', {
@@ -36,13 +37,6 @@ const Form = () => {
     e.preventDefault();
     mutate({ values });
     setValues(initialState);
-  };
-
-  const handleChange = (e) => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
