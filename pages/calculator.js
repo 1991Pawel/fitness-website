@@ -23,16 +23,16 @@ const Calculator = () => {
   const { values, setValues, handleChange } = useForm(initialState);
   const [result, setResult] = useState('');
 
+  const bmiCheck = () => {
+    const { height, weight } = values;
+    const bmi = weight / ((height / 100) * (height / 100));
+    setResult(bmi.toFixed(2));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     bmiCheck(values);
     setValues(initialState);
-  };
-
-  const bmiCheck = (values) => {
-    const { height, weight } = values;
-    const bmi = weight / ((height / 100) * (height / 100));
-    setResult(bmi.toFixed(2));
   };
 
   const bmiMessage = (bmi) => {
