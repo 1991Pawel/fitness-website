@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Layout from 'components/Layout/Layout';
 import styles from 'styles/Calculator.module.scss';
 import useForm from 'hooks/useForm';
+import bmiMessage from 'helpers/bmiMessage';
 
 const initialState = {
   height: '',
@@ -10,18 +11,16 @@ const initialState = {
   sex: '',
 };
 
-// do 16: wygłodzenie
-// od 16 do 17: wychudzenie
-// od 17 do 18.5: niedowaga
-// od 18.5 do 25: wartość prawidłowa
-// od 25 do 30: nadwaga
-// od 30 do 35: I stopień otyłości
-// od 35 do 40: II stopień otyłości
-// powyżej 40: III stopień otyłości
-
 const Calculator = () => {
   const { values, setValues, handleChange } = useForm(initialState);
   const [result, setResult] = useState('');
+  const resultEl = useRef(null);
+
+  useEffect(() => {
+    if (result) {
+      resultEl.current.scrollIntoView();
+    }
+  }, [result]);
 
   const bmiCheck = () => {
     const { height, weight } = values;
@@ -35,32 +34,6 @@ const Calculator = () => {
     setValues(initialState);
   };
 
-  const bmiMessage = (bmi) => {
-    if (bmi < 16.5) {
-      return 'Wygłodzenie';
-    }
-    if (bmi < 17) {
-      return 'Wychudzenie';
-    }
-    if (bmi < 18.5) {
-      return 'Niedowaga';
-    }
-    if (bmi < 25) {
-      return 'Norma';
-    }
-    if (bmi < 30) {
-      return 'Nadwaga';
-    }
-    if (bmi < 35) {
-      return 'Otyłość I stopnia';
-    }
-    if (bmi < 40) {
-      return 'Otyłość II stopnia';
-    }
-
-    return 'Otyłość III stopnia';
-  };
-
   return (
     <Layout>
       <section className={styles.calculator}>
@@ -70,6 +43,7 @@ const Calculator = () => {
             <h2>Kalkulator BMR</h2>
             <p>Oblicz dzienne zapotrzebowanie na kalorie</p>
           </div> */}
+
           <div className={styles.calc}>
             <h2>Kalkulator BMI</h2>
             <p>Oblicz czy twoja waga jest prawidłowa.</p>
@@ -108,7 +82,7 @@ const Calculator = () => {
                   onChange={(e) => handleChange(e)}
                   id="height"
                   type="number"
-                  min="0"
+                  min="100"
                   max="250"
                   name="height"
                   value={values.height}
@@ -122,7 +96,7 @@ const Calculator = () => {
                   onChange={(e) => handleChange(e)}
                   id="weight"
                   type="number"
-                  min="0"
+                  min="40"
                   max="250"
                   name="weight"
                   value={values.weight}
@@ -135,7 +109,7 @@ const Calculator = () => {
               </button>
             </form>
             {result && (
-              <div className={styles.calc__result}>
+              <div ref={resultEl} className={styles.calc__result}>
                 <p className={styles.calc__desc}>
                   <span className={styles.calc__extra}>
                     Twoje BMI wynosi {result}
