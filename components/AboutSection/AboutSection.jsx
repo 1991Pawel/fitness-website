@@ -48,15 +48,17 @@ const AboutSection = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className={styles.desc}
           >
-            Jestem aktywną
-            <span className={styles.extra}> zawodniczką bikini fitness</span>,
-            moja wiedza i doświadczenie pomogą Ci osiągnąć zamierzone cele. Od
+            Nazywam się <span className={styles.extra}>Monika Korzeniecka</span>{' '}
+            jestem trenerem kobiet oraz nauczycielką wychowania fizycznego. Mama
+            dwójki dziewczynek. W 2018 roku miałam przygodę jako{' '}
+            <span className={styles.extra}>zawodniczka bikini fitness</span>.
+            Moja wiedza i doświadczenie pomogą Ci osiągnąć zamierzone cele. Od
             lat udoskonalam nie tylko własną sylwetkę, ale pomagam również innym
             osiągnąć szczyt sprawności fizycznej, zbudować muskularną sylwetkę
-            czy <span className={styles.extra}>zgubić zbędne kilogramy.</span>
-            Moi podopieczni przechodzą ze mną przemiany, które prowadzą do ich
-            <span className={styles.extra}> wymarzonej figury</span> i poprawy
-            jakości życia
+            czy zgubić zbędne kilogramy. Moi podopieczni przechodzą ze mną
+            przemiany, które prowadzą do ich{' '}
+            <span className={styles.extra}>wymarzonej figury</span> i poprawy
+            jakości życia.
           </motion.p>
         </article>
         <motion.div

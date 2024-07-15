@@ -9,6 +9,9 @@ const OfferSection = () => (
         <div className={styles.header}>
           <h3 className={styles.header__title}>Programy treningowe</h3>
         </div>
+        <div className={styles.free}>
+          <h3 className={styles.free__title}>DARMOWA KONSULTACJA</h3>
+        </div>
         <div className={styles.option}>
           <img
             className={styles.option__icon}
@@ -58,13 +61,15 @@ const OfferSection = () => (
             width="62px"
             height="62px"
           />
-          <h3 className={styles.option__title}>PLANY TRENINGOWE</h3>
+          <h3 className={styles.option__title}>
+            PLANY TRENINGOWE NA siłownię oraz&nbsp;w&nbsp;domu{' '}
+          </h3>
           <p className={styles.option__desc}>
             Indywidualny plan treningowy w zależności od twoich celów
             sylwetkowych i treningowych
           </p>
         </div>
-        <div className={styles.option}>
+        {/* <div className={styles.option}>
           <img
             className={styles.option__icon}
             src="images/brain.png"
@@ -76,7 +81,7 @@ const OfferSection = () => (
           <p className={styles.option__desc}>
             Przygotowanie mentalne do osiągnięcia założonych celów
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   </section>
